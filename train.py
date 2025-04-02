@@ -35,10 +35,13 @@ def train_model(model, train_loader, val_loader, criterion, optimizer, num_epoch
         train_total = 0
         
         for frames, labels in tqdm(train_loader, desc=f'Epoch {epoch+1}/{num_epochs} - Training'):
+            # 这里的frames是一个batch_size * 3 * 16 * 224 * 224的tensor
             frames = frames.to(device)
+            # labels是一个batch_size * 1的tensor
             labels = labels.to(device)
             
-            optimizer.zero_grad()
+            optimizer.zero_grad() # 清空梯度
+            # 前向传播
             outputs = model(frames)
             loss = criterion(outputs, labels)
             loss.backward()
@@ -47,7 +50,7 @@ def train_model(model, train_loader, val_loader, criterion, optimizer, num_epoch
             train_loss += loss.item()
             _, predicted = outputs.max(1)
             train_total += labels.size(0)
-            train_correct += predicted.eq(labels).sum().item()
+            train_correct += predicted.eq(labels).sum().item() # 计算正确预测的数量
         
         train_acc = 100. * train_correct / train_total
         
@@ -58,7 +61,9 @@ def train_model(model, train_loader, val_loader, criterion, optimizer, num_epoch
         val_total = 0
         
         with torch.no_grad():
-            for frames, labels in tqdm(val_loader, desc=f'Epoch {epoch+1}/{num_epochs} - Validation'):
+            # for frames, labels in tqdm(val_loader, desc=f'Epoch {epoch+1}/{num_epochs} - Validation'):
+            for i, (frames, labels) in enumerate(val_loader):
+                print(f'\rEpoch {epoch+1}/{num_epochs} - Validation: {i+1}/{len(val_loader)} batches', end='')
                 frames = frames.to(device)
                 labels = labels.to(device)
                 
@@ -103,23 +108,25 @@ def main():
     transform = transforms.Compose([
         transforms.Resize((224, 224)),
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+        # mean和std值根据数据集进行调整，这里使用ImageNet的均值和标准差，可以根据实际情况调整
     ])
     
     # 创建数据加载器
     root_dir = 'ShuttleSet/set'
     video_dir = 'youtube_video'
-    # 减小批次大小
+    # 减小批次大小，batch_size指定每个批次的样本数量，num_workers指定加载数据时使用的子进程数量
     train_loader, val_loader = create_data_loaders(root_dir, video_dir, batch_size=8, num_workers=2)
     
     # 创建模型
-    model = BadmintonShotNet(num_classes=18).to(device)
+    # TODO 是一共10类吧
+    model = BadmintonShotNet(num_classes=10).to(device) #num_classes表示分类的类别数，这里假设有10个类别
     
     # 定义损失函数和优化器
     criterion = nn.CrossEntropyLoss()
-    optimizer = optim.Adam(model.parameters(), lr=0.001)
+    optimizer = optim.Adam(model.parameters(), lr=0.001) # TODO 学习率
     
     # 训练模型
-    num_epochs = 1
+    num_epochs = 2
     train_model(model, train_loader, val_loader, criterion, optimizer, num_epochs, device)
 
 if __name__ == '__main__':

@@ -21,18 +21,21 @@ class BadmintonShotNet(nn.Module):
         super(BadmintonShotNet, self).__init__()
         
         # 3D卷积层 - 使用步长卷积替代池化
+        # 输入: (batch_size, 3, sequence_length, 224, 224)
+        # 3D卷积块1
         self.conv3d_1 = nn.Conv3d(3, 8, kernel_size=(3, 3, 3), padding=(1, 1, 1))
         self.bn3d_1 = nn.BatchNorm3d(8)
         self.conv3d_1_stride = nn.Conv3d(8, 8, kernel_size=(2, 2, 2), stride=(2, 2, 2))
-        
+        # 3D卷积块2
         self.conv3d_2 = nn.Conv3d(8, 16, kernel_size=(3, 3, 3), padding=(1, 1, 1))
         self.bn3d_2 = nn.BatchNorm3d(16)
         self.conv3d_2_stride = nn.Conv3d(16, 16, kernel_size=(2, 2, 2), stride=(2, 2, 2))
-        
+        # 3D卷积块3
         self.conv3d_3 = nn.Conv3d(16, 32, kernel_size=(3, 3, 3), padding=(1, 1, 1))
         self.bn3d_3 = nn.BatchNorm3d(32)
         self.conv3d_3_stride = nn.Conv3d(32, 32, kernel_size=(2, 2, 2), stride=(2, 2, 2))
-        
+        # 输出: (batch_size, 32, sequence_length/8, 224/8, 224/8)
+
         # 计算展平后的特征维度
         # 输入: (batch_size, 3, sequence_length, 224, 224)
         # 经过3次下采样后: (batch_size, 32, sequence_length/8, 224/8, 224/8)
@@ -40,11 +43,11 @@ class BadmintonShotNet(nn.Module):
         self.flat_features = 230400
         
         # 全连接层 - 使用更小的隐藏层
-        self.fc1 = nn.Linear(self.flat_features, 512)
-        self.dropout1 = nn.Dropout(0.5)
-        self.fc2 = nn.Linear(512, 256)
-        self.dropout2 = nn.Dropout(0.5)
-        self.fc3 = nn.Linear(256, num_classes)
+        self.fc1 = nn.Linear(self.flat_features, 512)  # 输入特征维度为展平后的特征维度
+        self.dropout1 = nn.Dropout(0.5)  # 防止过拟合
+        self.fc2 = nn.Linear(512, 256) # 隐藏层
+        self.dropout2 = nn.Dropout(0.5) # 防止过拟合
+        self.fc3 = nn.Linear(256, num_classes) # 输出层，num_classes为击球类型数量
         
     def forward(self, x):
         # 打印输入形状

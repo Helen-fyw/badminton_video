@@ -9,6 +9,7 @@ from typing import List, Tuple, Dict
 import json
 
 class BadmintonDataset(Dataset):
+    # TODO sequence_length
     def __init__(self, root_dir: str, video_dir: str, transform=None, sequence_length: int = 16):
         """
         初始化数据集
@@ -20,16 +21,16 @@ class BadmintonDataset(Dataset):
         """
         self.root_dir = root_dir
         self.video_dir = video_dir
-        self.transform = transform
-        self.sequence_length = sequence_length
+        self.transform = transform #这是一个数据增强的转换函数，用于对图像进行预处理，如调整大小、归一化等。
+        self.sequence_length = sequence_length #这是一个整数，表示每个样本包含的帧数。
         
         # 读取所有比赛信息
         self.matches = pd.read_csv(os.path.join(root_dir, 'match.csv'))
         self.homography = pd.read_csv(os.path.join(root_dir,'homography.csv'))
         
         # 击球类型映射
-        self.shot_type_map = { '發短球': 1, '長球': 2, '推球': 3, '殺球':4, '擋小球':5, '平球':6, '放小球':7, '挑球':8, '切球':9, '發長球':10, '接不到':11} 
-        
+        self.shot_type_map = {'發短球': 1, '長球': 2, '推球': 3, '殺球':4, '擋小球':5, '平球':6, '放小球':7, '挑球':8, '切球':9, '發長球':10, '接不到':11} 
+
         print("\n数据集中的比赛：")
         for _, match in self.matches.iterrows():
             video_path = os.path.join(self.video_dir,match['video'], match['video'] + '.mp4')
@@ -68,8 +69,9 @@ class BadmintonDataset(Dataset):
                 
                 # 处理每个击球
                 for i in range(len(set_data)):
-                    if i < self.sequence_length:
-                        continue
+                    # TODO 这里似乎不用判断i < self.sequence_length
+                    # if i < self.sequence_length:
+                    #     continue
                         
                     # 获取击球类型
                     shot_type = set_data.iloc[i]['type']
@@ -141,17 +143,17 @@ def create_data_loaders(root_dir: str, video_dir: str, batch_size: int = 32, num
     dataset = BadmintonDataset(root_dir, video_dir)
     
     # 划分训练集和验证集
-    train_size = int(0.8 * len(dataset))
+    train_size = int(0.8 * len(dataset)) # 80%训练集，20%验证集
     val_size = len(dataset) - train_size
     train_dataset, val_dataset = torch.utils.data.random_split(dataset, [train_size, val_size])
     
     # 创建数据加载器
     train_loader = DataLoader(
         train_dataset,
-        batch_size=batch_size,
-        shuffle=True,
-        num_workers=num_workers,
-        pin_memory=True
+        batch_size=batch_size, # 
+        shuffle=True, # 打乱数据集
+        num_workers=num_workers, # 多线程加载数据
+        pin_memory=True # 将数据加载到GPU内存中，加快训练速度
     )
     
     val_loader = DataLoader(
