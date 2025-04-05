@@ -1,0 +1,2154 @@
+{
+  "predictions": [
+    {
+      "frame": 16,
+      "shot_type": "切球",
+      "confidence": 0.13018834590911865
+    },
+    {
+      "frame": 17,
+      "shot_type": "切球",
+      "confidence": 0.13018816709518433
+    },
+    {
+      "frame": 18,
+      "shot_type": "切球",
+      "confidence": 0.1301882416009903
+    },
+    {
+      "frame": 19,
+      "shot_type": "切球",
+      "confidence": 0.1301882416009903
+    },
+    {
+      "frame": 20,
+      "shot_type": "切球",
+      "confidence": 0.13018830120563507
+    },
+    {
+      "frame": 21,
+      "shot_type": "切球",
+      "confidence": 0.13018816709518433
+    },
+    {
+      "frame": 22,
+      "shot_type": "切球",
+      "confidence": 0.13018807768821716
+    },
+    {
+      "frame": 23,
+      "shot_type": "切球",
+      "confidence": 0.13018810749053955
+    },
+    {
+      "frame": 24,
+      "shot_type": "切球",
+      "confidence": 0.13018809258937836
+    },
+    {
+      "frame": 25,
+      "shot_type": "切球",
+      "confidence": 0.13018803298473358
+    },
+    {
+      "frame": 26,
+      "shot_type": "切球",
+      "confidence": 0.13018803298473358
+    },
+    {
+      "frame": 27,
+      "shot_type": "切球",
+      "confidence": 0.13018806278705597
+    },
+    {
+      "frame": 28,
+      "shot_type": "切球",
+      "confidence": 0.13018809258937836
+    },
+    {
+      "frame": 29,
+      "shot_type": "切球",
+      "confidence": 0.13018806278705597
+    },
+    {
+      "frame": 30,
+      "shot_type": "切球",
+      "confidence": 0.13018804788589478
+    },
+    {
+      "frame": 31,
+      "shot_type": "切球",
+      "confidence": 0.1301880180835724
+    },
+    {
+      "frame": 32,
+      "shot_type": "切球",
+      "confidence": 0.1301880180835724
+    },
+    {
+      "frame": 33,
+      "shot_type": "切球",
+      "confidence": 0.13018791377544403
+    },
+    {
+      "frame": 34,
+      "shot_type": "切球",
+      "confidence": 0.13018789887428284
+    },
+    {
+      "frame": 35,
+      "shot_type": "切球",
+      "confidence": 0.1301877349615097
+    },
+    {
+      "frame": 36,
+      "shot_type": "切球",
+      "confidence": 0.13018763065338135
+    },
+    {
+      "frame": 37,
+      "shot_type": "切球",
+      "confidence": 0.13018758594989777
+    },
+    {
+      "frame": 38,
+      "shot_type": "切球",
+      "confidence": 0.13018746674060822
+    },
+    {
+      "frame": 39,
+      "shot_type": "切球",
+      "confidence": 0.1301874965429306
+    },
+    {
+      "frame": 40,
+      "shot_type": "切球",
+      "confidence": 0.130187526345253
+    },
+    {
+      "frame": 41,
+      "shot_type": "切球",
+      "confidence": 0.13018754124641418
+    },
+    {
+      "frame": 42,
+      "shot_type": "切球",
+      "confidence": 0.13018743693828583
+    },
+    {
+      "frame": 43,
+      "shot_type": "切球",
+      "confidence": 0.1301872432231903
+    },
+    {
+      "frame": 44,
+      "shot_type": "切球",
+      "confidence": 0.13018715381622314
+    },
+    {
+      "frame": 45,
+      "shot_type": "切球",
+      "confidence": 0.13018713891506195
+    },
+    {
+      "frame": 46,
+      "shot_type": "切球",
+      "confidence": 0.13018707931041718
+    },
+    {
+      "frame": 47,
+      "shot_type": "切球",
+      "confidence": 0.13018712401390076
+    },
+    {
+      "frame": 48,
+      "shot_type": "切球",
+      "confidence": 0.13018712401390076
+    },
+    {
+      "frame": 49,
+      "shot_type": "切球",
+      "confidence": 0.13018712401390076
+    },
+    {
+      "frame": 50,
+      "shot_type": "切球",
+      "confidence": 0.13018707931041718
+    },
+    {
+      "frame": 51,
+      "shot_type": "切球",
+      "confidence": 0.1301870197057724
+    },
+    {
+      "frame": 52,
+      "shot_type": "切球",
+      "confidence": 0.13018691539764404
+    },
+    {
+      "frame": 53,
+      "shot_type": "切球",
+      "confidence": 0.13018682599067688
+    },
+    {
+      "frame": 54,
+      "shot_type": "切球",
+      "confidence": 0.1301867961883545
+    },
+    {
+      "frame": 55,
+      "shot_type": "切球",
+      "confidence": 0.13018687069416046
+    },
+    {
+      "frame": 56,
+      "shot_type": "切球",
+      "confidence": 0.13018691539764404
+    },
+    {
+      "frame": 57,
+      "shot_type": "切球",
+      "confidence": 0.13018688559532166
+    },
+    {
+      "frame": 58,
+      "shot_type": "切球",
+      "confidence": 0.13018696010112762
+    },
+    {
+      "frame": 59,
+      "shot_type": "切球",
+      "confidence": 0.13018698990345
+    },
+    {
+      "frame": 60,
+      "shot_type": "切球",
+      "confidence": 0.13018697500228882
+    },
+    {
+      "frame": 61,
+      "shot_type": "切球",
+      "confidence": 0.13018685579299927
+    },
+    {
+      "frame": 62,
+      "shot_type": "切球",
+      "confidence": 0.13018693029880524
+    },
+    {
+      "frame": 63,
+      "shot_type": "切球",
+      "confidence": 0.13018684089183807
+    },
+    {
+      "frame": 64,
+      "shot_type": "切球",
+      "confidence": 0.13018685579299927
+    },
+    {
+      "frame": 65,
+      "shot_type": "切球",
+      "confidence": 0.13018682599067688
+    },
+    {
+      "frame": 66,
+      "shot_type": "切球",
+      "confidence": 0.1301870048046112
+    },
+    {
+      "frame": 67,
+      "shot_type": "切球",
+      "confidence": 0.1301870197057724
+    },
+    {
+      "frame": 68,
+      "shot_type": "切球",
+      "confidence": 0.1301870346069336
+    },
+    {
+      "frame": 69,
+      "shot_type": "切球",
+      "confidence": 0.13018707931041718
+    },
+    {
+      "frame": 70,
+      "shot_type": "切球",
+      "confidence": 0.13018706440925598
+    },
+    {
+      "frame": 71,
+      "shot_type": "切球",
+      "confidence": 0.13018713891506195
+    },
+    {
+      "frame": 72,
+      "shot_type": "切球",
+      "confidence": 0.13018718361854553
+    },
+    {
+      "frame": 73,
+      "shot_type": "切球",
+      "confidence": 0.13018721342086792
+    },
+    {
+      "frame": 74,
+      "shot_type": "切球",
+      "confidence": 0.13018734753131866
+    },
+    {
+      "frame": 75,
+      "shot_type": "切球",
+      "confidence": 0.13018739223480225
+    },
+    {
+      "frame": 76,
+      "shot_type": "切球",
+      "confidence": 0.1301875114440918
+    },
+    {
+      "frame": 77,
+      "shot_type": "切球",
+      "confidence": 0.13018761575222015
+    },
+    {
+      "frame": 78,
+      "shot_type": "切球",
+      "confidence": 0.13018764555454254
+    },
+    {
+      "frame": 79,
+      "shot_type": "切球",
+      "confidence": 0.1301877349615097
+    },
+    {
+      "frame": 80,
+      "shot_type": "切球",
+      "confidence": 0.13018769025802612
+    },
+    {
+      "frame": 81,
+      "shot_type": "切球",
+      "confidence": 0.1301877200603485
+    },
+    {
+      "frame": 82,
+      "shot_type": "切球",
+      "confidence": 0.13018785417079926
+    },
+    {
+      "frame": 83,
+      "shot_type": "切球",
+      "confidence": 0.13018794357776642
+    },
+    {
+      "frame": 84,
+      "shot_type": "切球",
+      "confidence": 0.13018803298473358
+    },
+    {
+      "frame": 85,
+      "shot_type": "切球",
+      "confidence": 0.13018807768821716
+    },
+    {
+      "frame": 86,
+      "shot_type": "切球",
+      "confidence": 0.13018818199634552
+    },
+    {
+      "frame": 87,
+      "shot_type": "切球",
+      "confidence": 0.13018827140331268
+    },
+    {
+      "frame": 88,
+      "shot_type": "切球",
+      "confidence": 0.1301882117986679
+    },
+    {
+      "frame": 89,
+      "shot_type": "切球",
+      "confidence": 0.13018813729286194
+    },
+    {
+      "frame": 90,
+      "shot_type": "切球",
+      "confidence": 0.13018813729286194
+    },
+    {
+      "frame": 91,
+      "shot_type": "切球",
+      "confidence": 0.13018818199634552
+    },
+    {
+      "frame": 92,
+      "shot_type": "切球",
+      "confidence": 0.13018810749053955
+    },
+    {
+      "frame": 93,
+      "shot_type": "切球",
+      "confidence": 0.13018809258937836
+    },
+    {
+      "frame": 94,
+      "shot_type": "切球",
+      "confidence": 0.13018813729286194
+    },
+    {
+      "frame": 95,
+      "shot_type": "切球",
+      "confidence": 0.13018809258937836
+    },
+    {
+      "frame": 96,
+      "shot_type": "切球",
+      "confidence": 0.13018804788589478
+    },
+    {
+      "frame": 97,
+      "shot_type": "切球",
+      "confidence": 0.1301879584789276
+    },
+    {
+      "frame": 98,
+      "shot_type": "切球",
+      "confidence": 0.13018806278705597
+    },
+    {
+      "frame": 99,
+      "shot_type": "切球",
+      "confidence": 0.13018807768821716
+    },
+    {
+      "frame": 100,
+      "shot_type": "切球",
+      "confidence": 0.13018815219402313
+    },
+    {
+      "frame": 101,
+      "shot_type": "切球",
+      "confidence": 0.13018812239170074
+    },
+    {
+      "frame": 102,
+      "shot_type": "切球",
+      "confidence": 0.13018816709518433
+    },
+    {
+      "frame": 103,
+      "shot_type": "切球",
+      "confidence": 0.13018812239170074
+    },
+    {
+      "frame": 104,
+      "shot_type": "切球",
+      "confidence": 0.13018818199634552
+    },
+    {
+      "frame": 105,
+      "shot_type": "切球",
+      "confidence": 0.1301882117986679
+    },
+    {
+      "frame": 106,
+      "shot_type": "切球",
+      "confidence": 0.13018830120563507
+    },
+    {
+      "frame": 107,
+      "shot_type": "切球",
+      "confidence": 0.13018839061260223
+    },
+    {
+      "frame": 108,
+      "shot_type": "切球",
+      "confidence": 0.1301884800195694
+    },
+    {
+      "frame": 109,
+      "shot_type": "切球",
+      "confidence": 0.13018837571144104
+    },
+    {
+      "frame": 110,
+      "shot_type": "切球",
+      "confidence": 0.1301882565021515
+    },
+    {
+      "frame": 111,
+      "shot_type": "切球",
+      "confidence": 0.13018818199634552
+    },
+    {
+      "frame": 112,
+      "shot_type": "切球",
+      "confidence": 0.13018812239170074
+    },
+    {
+      "frame": 113,
+      "shot_type": "切球",
+      "confidence": 0.13018809258937836
+    },
+    {
+      "frame": 114,
+      "shot_type": "切球",
+      "confidence": 0.13018809258937836
+    },
+    {
+      "frame": 115,
+      "shot_type": "切球",
+      "confidence": 0.13018812239170074
+    },
+    {
+      "frame": 116,
+      "shot_type": "切球",
+      "confidence": 0.13018813729286194
+    },
+    {
+      "frame": 117,
+      "shot_type": "切球",
+      "confidence": 0.1301882266998291
+    },
+    {
+      "frame": 118,
+      "shot_type": "切球",
+      "confidence": 0.13018827140331268
+    },
+    {
+      "frame": 119,
+      "shot_type": "切球",
+      "confidence": 0.13018828630447388
+    },
+    {
+      "frame": 120,
+      "shot_type": "切球",
+      "confidence": 0.13018813729286194
+    },
+    {
+      "frame": 121,
+      "shot_type": "切球",
+      "confidence": 0.13018810749053955
+    },
+    {
+      "frame": 122,
+      "shot_type": "切球",
+      "confidence": 0.13018812239170074
+    },
+    {
+      "frame": 123,
+      "shot_type": "切球",
+      "confidence": 0.13018815219402313
+    },
+    {
+      "frame": 124,
+      "shot_type": "切球",
+      "confidence": 0.1301881968975067
+    },
+    {
+      "frame": 125,
+      "shot_type": "切球",
+      "confidence": 0.13018828630447388
+    },
+    {
+      "frame": 126,
+      "shot_type": "切球",
+      "confidence": 0.13018831610679626
+    },
+    {
+      "frame": 127,
+      "shot_type": "切球",
+      "confidence": 0.13018828630447388
+    },
+    {
+      "frame": 128,
+      "shot_type": "切球",
+      "confidence": 0.13018818199634552
+    },
+    {
+      "frame": 129,
+      "shot_type": "切球",
+      "confidence": 0.13018803298473358
+    },
+    {
+      "frame": 130,
+      "shot_type": "切球",
+      "confidence": 0.1301879733800888
+    },
+    {
+      "frame": 131,
+      "shot_type": "切球",
+      "confidence": 0.1301880031824112
+    },
+    {
+      "frame": 132,
+      "shot_type": "切球",
+      "confidence": 0.1301880031824112
+    },
+    {
+      "frame": 133,
+      "shot_type": "切球",
+      "confidence": 0.13018798828125
+    },
+    {
+      "frame": 134,
+      "shot_type": "切球",
+      "confidence": 0.1301880180835724
+    },
+    {
+      "frame": 135,
+      "shot_type": "切球",
+      "confidence": 0.13018803298473358
+    },
+    {
+      "frame": 136,
+      "shot_type": "切球",
+      "confidence": 0.13018806278705597
+    },
+    {
+      "frame": 137,
+      "shot_type": "切球",
+      "confidence": 0.1301880180835724
+    },
+    {
+      "frame": 138,
+      "shot_type": "切球",
+      "confidence": 0.13018798828125
+    },
+    {
+      "frame": 139,
+      "shot_type": "切球",
+      "confidence": 0.1301880031824112
+    },
+    {
+      "frame": 140,
+      "shot_type": "切球",
+      "confidence": 0.1301879733800888
+    },
+    {
+      "frame": 141,
+      "shot_type": "切球",
+      "confidence": 0.13018794357776642
+    },
+    {
+      "frame": 142,
+      "shot_type": "切球",
+      "confidence": 0.13018792867660522
+    },
+    {
+      "frame": 143,
+      "shot_type": "切球",
+      "confidence": 0.13018792867660522
+    },
+    {
+      "frame": 144,
+      "shot_type": "切球",
+      "confidence": 0.13018794357776642
+    },
+    {
+      "frame": 145,
+      "shot_type": "切球",
+      "confidence": 0.13018794357776642
+    },
+    {
+      "frame": 146,
+      "shot_type": "切球",
+      "confidence": 0.13018782436847687
+    },
+    {
+      "frame": 147,
+      "shot_type": "切球",
+      "confidence": 0.1301877796649933
+    },
+    {
+      "frame": 148,
+      "shot_type": "切球",
+      "confidence": 0.13018780946731567
+    },
+    {
+      "frame": 149,
+      "shot_type": "切球",
+      "confidence": 0.13018789887428284
+    },
+    {
+      "frame": 150,
+      "shot_type": "切球",
+      "confidence": 0.1301877498626709
+    },
+    {
+      "frame": 151,
+      "shot_type": "切球",
+      "confidence": 0.13018761575222015
+    },
+    {
+      "frame": 152,
+      "shot_type": "切球",
+      "confidence": 0.13018745183944702
+    },
+    {
+      "frame": 153,
+      "shot_type": "切球",
+      "confidence": 0.13018740713596344
+    },
+    {
+      "frame": 154,
+      "shot_type": "切球",
+      "confidence": 0.13018734753131866
+    },
+    {
+      "frame": 155,
+      "shot_type": "切球",
+      "confidence": 0.13018731772899628
+    },
+    {
+      "frame": 156,
+      "shot_type": "切球",
+      "confidence": 0.13018716871738434
+    },
+    {
+      "frame": 157,
+      "shot_type": "切球",
+      "confidence": 0.13018713891506195
+    },
+    {
+      "frame": 158,
+      "shot_type": "切球",
+      "confidence": 0.13018716871738434
+    },
+    {
+      "frame": 159,
+      "shot_type": "切球",
+      "confidence": 0.1301872581243515
+    },
+    {
+      "frame": 160,
+      "shot_type": "切球",
+      "confidence": 0.13018719851970673
+    },
+    {
+      "frame": 161,
+      "shot_type": "切球",
+      "confidence": 0.1301872283220291
+    },
+    {
+      "frame": 162,
+      "shot_type": "切球",
+      "confidence": 0.13018739223480225
+    },
+    {
+      "frame": 163,
+      "shot_type": "切球",
+      "confidence": 0.13018742203712463
+    },
+    {
+      "frame": 164,
+      "shot_type": "切球",
+      "confidence": 0.13018736243247986
+    },
+    {
+      "frame": 165,
+      "shot_type": "切球",
+      "confidence": 0.13018733263015747
+    },
+    {
+      "frame": 166,
+      "shot_type": "切球",
+      "confidence": 0.13018740713596344
+    },
+    {
+      "frame": 167,
+      "shot_type": "切球",
+      "confidence": 0.13018746674060822
+    },
+    {
+      "frame": 168,
+      "shot_type": "切球",
+      "confidence": 0.1301874965429306
+    },
+    {
+      "frame": 169,
+      "shot_type": "切球",
+      "confidence": 0.1301875114440918
+    },
+    {
+      "frame": 170,
+      "shot_type": "切球",
+      "confidence": 0.1301875114440918
+    },
+    {
+      "frame": 171,
+      "shot_type": "切球",
+      "confidence": 0.1301874816417694
+    },
+    {
+      "frame": 172,
+      "shot_type": "切球",
+      "confidence": 0.130187526345253
+    },
+    {
+      "frame": 173,
+      "shot_type": "切球",
+      "confidence": 0.13018754124641418
+    },
+    {
+      "frame": 174,
+      "shot_type": "切球",
+      "confidence": 0.13018763065338135
+    },
+    {
+      "frame": 175,
+      "shot_type": "切球",
+      "confidence": 0.13018769025802612
+    },
+    {
+      "frame": 176,
+      "shot_type": "切球",
+      "confidence": 0.13018779456615448
+    },
+    {
+      "frame": 177,
+      "shot_type": "切球",
+      "confidence": 0.13018786907196045
+    },
+    {
+      "frame": 178,
+      "shot_type": "切球",
+      "confidence": 0.13018782436847687
+    },
+    {
+      "frame": 179,
+      "shot_type": "切球",
+      "confidence": 0.1301877349615097
+    },
+    {
+      "frame": 180,
+      "shot_type": "切球",
+      "confidence": 0.13018779456615448
+    },
+    {
+      "frame": 181,
+      "shot_type": "切球",
+      "confidence": 0.13018792867660522
+    },
+    {
+      "frame": 182,
+      "shot_type": "切球",
+      "confidence": 0.1301880180835724
+    },
+    {
+      "frame": 183,
+      "shot_type": "切球",
+      "confidence": 0.13018806278705597
+    },
+    {
+      "frame": 184,
+      "shot_type": "切球",
+      "confidence": 0.13018809258937836
+    },
+    {
+      "frame": 185,
+      "shot_type": "切球",
+      "confidence": 0.13018809258937836
+    },
+    {
+      "frame": 186,
+      "shot_type": "切球",
+      "confidence": 0.1301880031824112
+    },
+    {
+      "frame": 187,
+      "shot_type": "切球",
+      "confidence": 0.13018803298473358
+    },
+    {
+      "frame": 188,
+      "shot_type": "切球",
+      "confidence": 0.13018812239170074
+    },
+    {
+      "frame": 189,
+      "shot_type": "切球",
+      "confidence": 0.1301881968975067
+    },
+    {
+      "frame": 190,
+      "shot_type": "切球",
+      "confidence": 0.13018828630447388
+    },
+    {
+      "frame": 191,
+      "shot_type": "切球",
+      "confidence": 0.13018836081027985
+    },
+    {
+      "frame": 192,
+      "shot_type": "切球",
+      "confidence": 0.13018836081027985
+    },
+    {
+      "frame": 193,
+      "shot_type": "切球",
+      "confidence": 0.13018834590911865
+    },
+    {
+      "frame": 194,
+      "shot_type": "切球",
+      "confidence": 0.13018833100795746
+    },
+    {
+      "frame": 195,
+      "shot_type": "切球",
+      "confidence": 0.13018839061260223
+    },
+    {
+      "frame": 196,
+      "shot_type": "切球",
+      "confidence": 0.13018840551376343
+    },
+    {
+      "frame": 197,
+      "shot_type": "切球",
+      "confidence": 0.13018842041492462
+    },
+    {
+      "frame": 198,
+      "shot_type": "切球",
+      "confidence": 0.130188450217247
+    },
+    {
+      "frame": 199,
+      "shot_type": "切球",
+      "confidence": 0.13018852472305298
+    },
+    {
+      "frame": 200,
+      "shot_type": "切球",
+      "confidence": 0.13018864393234253
+    },
+    {
+      "frame": 201,
+      "shot_type": "切球",
+      "confidence": 0.13018879294395447
+    },
+    {
+      "frame": 202,
+      "shot_type": "切球",
+      "confidence": 0.13018885254859924
+    },
+    {
+      "frame": 203,
+      "shot_type": "切球",
+      "confidence": 0.13018882274627686
+    },
+    {
+      "frame": 204,
+      "shot_type": "切球",
+      "confidence": 0.1301887184381485
+    },
+    {
+      "frame": 205,
+      "shot_type": "切球",
+      "confidence": 0.13018867373466492
+    },
+    {
+      "frame": 206,
+      "shot_type": "切球",
+      "confidence": 0.13018858432769775
+    },
+    {
+      "frame": 207,
+      "shot_type": "切球",
+      "confidence": 0.13018858432769775
+    },
+    {
+      "frame": 208,
+      "shot_type": "切球",
+      "confidence": 0.13018855452537537
+    },
+    {
+      "frame": 209,
+      "shot_type": "切球",
+      "confidence": 0.13018858432769775
+    },
+    {
+      "frame": 210,
+      "shot_type": "切球",
+      "confidence": 0.13018858432769775
+    },
+    {
+      "frame": 211,
+      "shot_type": "切球",
+      "confidence": 0.13018856942653656
+    },
+    {
+      "frame": 212,
+      "shot_type": "切球",
+      "confidence": 0.1301884800195694
+    },
+    {
+      "frame": 213,
+      "shot_type": "切球",
+      "confidence": 0.13018831610679626
+    },
+    {
+      "frame": 214,
+      "shot_type": "切球",
+      "confidence": 0.13018827140331268
+    },
+    {
+      "frame": 215,
+      "shot_type": "切球",
+      "confidence": 0.13018827140331268
+    },
+    {
+      "frame": 216,
+      "shot_type": "切球",
+      "confidence": 0.1301882117986679
+    },
+    {
+      "frame": 217,
+      "shot_type": "切球",
+      "confidence": 0.13018816709518433
+    },
+    {
+      "frame": 218,
+      "shot_type": "切球",
+      "confidence": 0.13018806278705597
+    },
+    {
+      "frame": 219,
+      "shot_type": "切球",
+      "confidence": 0.1301880031824112
+    },
+    {
+      "frame": 220,
+      "shot_type": "切球",
+      "confidence": 0.13018798828125
+    },
+    {
+      "frame": 221,
+      "shot_type": "切球",
+      "confidence": 0.13018812239170074
+    },
+    {
+      "frame": 222,
+      "shot_type": "切球",
+      "confidence": 0.13018806278705597
+    },
+    {
+      "frame": 223,
+      "shot_type": "切球",
+      "confidence": 0.1301880031824112
+    },
+    {
+      "frame": 224,
+      "shot_type": "切球",
+      "confidence": 0.1301880180835724
+    },
+    {
+      "frame": 225,
+      "shot_type": "切球",
+      "confidence": 0.1301880031824112
+    },
+    {
+      "frame": 226,
+      "shot_type": "切球",
+      "confidence": 0.13018798828125
+    },
+    {
+      "frame": 227,
+      "shot_type": "切球",
+      "confidence": 0.13018806278705597
+    },
+    {
+      "frame": 228,
+      "shot_type": "切球",
+      "confidence": 0.13018794357776642
+    },
+    {
+      "frame": 229,
+      "shot_type": "切球",
+      "confidence": 0.1301879733800888
+    },
+    {
+      "frame": 230,
+      "shot_type": "切球",
+      "confidence": 0.1301879733800888
+    },
+    {
+      "frame": 231,
+      "shot_type": "切球",
+      "confidence": 0.13018794357776642
+    },
+    {
+      "frame": 232,
+      "shot_type": "切球",
+      "confidence": 0.13018794357776642
+    },
+    {
+      "frame": 233,
+      "shot_type": "切球",
+      "confidence": 0.1301880180835724
+    },
+    {
+      "frame": 234,
+      "shot_type": "切球",
+      "confidence": 0.13018812239170074
+    },
+    {
+      "frame": 235,
+      "shot_type": "切球",
+      "confidence": 0.13018815219402313
+    },
+    {
+      "frame": 236,
+      "shot_type": "切球",
+      "confidence": 0.13018806278705597
+    },
+    {
+      "frame": 237,
+      "shot_type": "切球",
+      "confidence": 0.13018770515918732
+    },
+    {
+      "frame": 238,
+      "shot_type": "切球",
+      "confidence": 0.13018766045570374
+    },
+    {
+      "frame": 239,
+      "shot_type": "切球",
+      "confidence": 0.13018792867660522
+    },
+    {
+      "frame": 240,
+      "shot_type": "切球",
+      "confidence": 0.1301881968975067
+    },
+    {
+      "frame": 241,
+      "shot_type": "切球",
+      "confidence": 0.13018827140331268
+    },
+    {
+      "frame": 242,
+      "shot_type": "切球",
+      "confidence": 0.13018803298473358
+    },
+    {
+      "frame": 243,
+      "shot_type": "切球",
+      "confidence": 0.13018806278705597
+    },
+    {
+      "frame": 244,
+      "shot_type": "切球",
+      "confidence": 0.13018813729286194
+    },
+    {
+      "frame": 245,
+      "shot_type": "切球",
+      "confidence": 0.1301879733800888
+    },
+    {
+      "frame": 246,
+      "shot_type": "切球",
+      "confidence": 0.13018786907196045
+    },
+    {
+      "frame": 247,
+      "shot_type": "切球",
+      "confidence": 0.13018792867660522
+    },
+    {
+      "frame": 248,
+      "shot_type": "切球",
+      "confidence": 0.13018812239170074
+    },
+    {
+      "frame": 249,
+      "shot_type": "切球",
+      "confidence": 0.13018830120563507
+    },
+    {
+      "frame": 250,
+      "shot_type": "切球",
+      "confidence": 0.13018843531608582
+    },
+    {
+      "frame": 251,
+      "shot_type": "切球",
+      "confidence": 0.1301884949207306
+    },
+    {
+      "frame": 252,
+      "shot_type": "切球",
+      "confidence": 0.13018850982189178
+    },
+    {
+      "frame": 253,
+      "shot_type": "切球",
+      "confidence": 0.1301884949207306
+    },
+    {
+      "frame": 254,
+      "shot_type": "切球",
+      "confidence": 0.13018853962421417
+    },
+    {
+      "frame": 255,
+      "shot_type": "切球",
+      "confidence": 0.13018859922885895
+    },
+    {
+      "frame": 256,
+      "shot_type": "切球",
+      "confidence": 0.1301887333393097
+    },
+    {
+      "frame": 257,
+      "shot_type": "切球",
+      "confidence": 0.13018882274627686
+    },
+    {
+      "frame": 258,
+      "shot_type": "切球",
+      "confidence": 0.13018888235092163
+    },
+    {
+      "frame": 259,
+      "shot_type": "切球",
+      "confidence": 0.13018888235092163
+    },
+    {
+      "frame": 260,
+      "shot_type": "切球",
+      "confidence": 0.13018891215324402
+    },
+    {
+      "frame": 261,
+      "shot_type": "切球",
+      "confidence": 0.1301889419555664
+    },
+    {
+      "frame": 262,
+      "shot_type": "切球",
+      "confidence": 0.13018889725208282
+    },
+    {
+      "frame": 263,
+      "shot_type": "切球",
+      "confidence": 0.13018883764743805
+    },
+    {
+      "frame": 264,
+      "shot_type": "切球",
+      "confidence": 0.13018885254859924
+    },
+    {
+      "frame": 265,
+      "shot_type": "切球",
+      "confidence": 0.13018891215324402
+    },
+    {
+      "frame": 266,
+      "shot_type": "切球",
+      "confidence": 0.1301889717578888
+    },
+    {
+      "frame": 267,
+      "shot_type": "切球",
+      "confidence": 0.1301889717578888
+    },
+    {
+      "frame": 268,
+      "shot_type": "切球",
+      "confidence": 0.13018898665905
+    },
+    {
+      "frame": 269,
+      "shot_type": "切球",
+      "confidence": 0.1301889568567276
+    },
+    {
+      "frame": 270,
+      "shot_type": "切球",
+      "confidence": 0.1301889717578888
+    },
+    {
+      "frame": 271,
+      "shot_type": "切球",
+      "confidence": 0.13018888235092163
+    },
+    {
+      "frame": 272,
+      "shot_type": "切球",
+      "confidence": 0.13018883764743805
+    },
+    {
+      "frame": 273,
+      "shot_type": "切球",
+      "confidence": 0.1301887482404709
+    },
+    {
+      "frame": 274,
+      "shot_type": "切球",
+      "confidence": 0.1301886886358261
+    },
+    {
+      "frame": 275,
+      "shot_type": "切球",
+      "confidence": 0.13018876314163208
+    },
+    {
+      "frame": 276,
+      "shot_type": "切球",
+      "confidence": 0.13018877804279327
+    },
+    {
+      "frame": 277,
+      "shot_type": "切球",
+      "confidence": 0.1301887035369873
+    },
+    {
+      "frame": 278,
+      "shot_type": "切球",
+      "confidence": 0.1301887035369873
+    },
+    {
+      "frame": 279,
+      "shot_type": "切球",
+      "confidence": 0.13018867373466492
+    },
+    {
+      "frame": 280,
+      "shot_type": "切球",
+      "confidence": 0.1301887035369873
+    },
+    {
+      "frame": 281,
+      "shot_type": "切球",
+      "confidence": 0.13018865883350372
+    },
+    {
+      "frame": 282,
+      "shot_type": "切球",
+      "confidence": 0.1301887333393097
+    },
+    {
+      "frame": 283,
+      "shot_type": "切球",
+      "confidence": 0.1301887333393097
+    },
+    {
+      "frame": 284,
+      "shot_type": "切球",
+      "confidence": 0.1301886886358261
+    },
+    {
+      "frame": 285,
+      "shot_type": "切球",
+      "confidence": 0.13018865883350372
+    },
+    {
+      "frame": 286,
+      "shot_type": "切球",
+      "confidence": 0.1301886886358261
+    },
+    {
+      "frame": 287,
+      "shot_type": "切球",
+      "confidence": 0.13018859922885895
+    },
+    {
+      "frame": 288,
+      "shot_type": "切球",
+      "confidence": 0.13018855452537537
+    },
+    {
+      "frame": 289,
+      "shot_type": "切球",
+      "confidence": 0.13018840551376343
+    },
+    {
+      "frame": 290,
+      "shot_type": "切球",
+      "confidence": 0.13018834590911865
+    },
+    {
+      "frame": 291,
+      "shot_type": "切球",
+      "confidence": 0.13018836081027985
+    },
+    {
+      "frame": 292,
+      "shot_type": "切球",
+      "confidence": 0.13018833100795746
+    },
+    {
+      "frame": 293,
+      "shot_type": "切球",
+      "confidence": 0.13018842041492462
+    },
+    {
+      "frame": 294,
+      "shot_type": "切球",
+      "confidence": 0.13018853962421417
+    },
+    {
+      "frame": 295,
+      "shot_type": "切球",
+      "confidence": 0.13018864393234253
+    },
+    {
+      "frame": 296,
+      "shot_type": "切球",
+      "confidence": 0.13018861413002014
+    },
+    {
+      "frame": 297,
+      "shot_type": "切球",
+      "confidence": 0.13018858432769775
+    },
+    {
+      "frame": 298,
+      "shot_type": "切球",
+      "confidence": 0.1301884949207306
+    },
+    {
+      "frame": 299,
+      "shot_type": "切球",
+      "confidence": 0.1301884800195694
+    },
+    {
+      "frame": 300,
+      "shot_type": "切球",
+      "confidence": 0.1301884651184082
+    },
+    {
+      "frame": 301,
+      "shot_type": "切球",
+      "confidence": 0.1301884800195694
+    },
+    {
+      "frame": 302,
+      "shot_type": "切球",
+      "confidence": 0.13018850982189178
+    },
+    {
+      "frame": 303,
+      "shot_type": "切球",
+      "confidence": 0.13018839061260223
+    },
+    {
+      "frame": 304,
+      "shot_type": "切球",
+      "confidence": 0.13018831610679626
+    },
+    {
+      "frame": 305,
+      "shot_type": "切球",
+      "confidence": 0.13018830120563507
+    },
+    {
+      "frame": 306,
+      "shot_type": "切球",
+      "confidence": 0.13018834590911865
+    },
+    {
+      "frame": 307,
+      "shot_type": "切球",
+      "confidence": 0.13018828630447388
+    },
+    {
+      "frame": 308,
+      "shot_type": "切球",
+      "confidence": 0.1301882565021515
+    },
+    {
+      "frame": 309,
+      "shot_type": "切球",
+      "confidence": 0.13018834590911865
+    },
+    {
+      "frame": 310,
+      "shot_type": "切球",
+      "confidence": 0.13018834590911865
+    },
+    {
+      "frame": 311,
+      "shot_type": "切球",
+      "confidence": 0.13018837571144104
+    },
+    {
+      "frame": 312,
+      "shot_type": "切球",
+      "confidence": 0.13018830120563507
+    },
+    {
+      "frame": 313,
+      "shot_type": "切球",
+      "confidence": 0.1301882266998291
+    },
+    {
+      "frame": 314,
+      "shot_type": "切球",
+      "confidence": 0.13018813729286194
+    },
+    {
+      "frame": 315,
+      "shot_type": "切球",
+      "confidence": 0.13018809258937836
+    },
+    {
+      "frame": 316,
+      "shot_type": "切球",
+      "confidence": 0.1301880180835724
+    },
+    {
+      "frame": 317,
+      "shot_type": "切球",
+      "confidence": 0.13018798828125
+    },
+    {
+      "frame": 318,
+      "shot_type": "切球",
+      "confidence": 0.13018798828125
+    },
+    {
+      "frame": 319,
+      "shot_type": "切球",
+      "confidence": 0.13018798828125
+    },
+    {
+      "frame": 320,
+      "shot_type": "切球",
+      "confidence": 0.1301880180835724
+    },
+    {
+      "frame": 321,
+      "shot_type": "切球",
+      "confidence": 0.1301879733800888
+    },
+    {
+      "frame": 322,
+      "shot_type": "切球",
+      "confidence": 0.13018809258937836
+    },
+    {
+      "frame": 323,
+      "shot_type": "切球",
+      "confidence": 0.13018813729286194
+    },
+    {
+      "frame": 324,
+      "shot_type": "切球",
+      "confidence": 0.13018818199634552
+    },
+    {
+      "frame": 325,
+      "shot_type": "切球",
+      "confidence": 0.13018831610679626
+    },
+    {
+      "frame": 326,
+      "shot_type": "切球",
+      "confidence": 0.13018831610679626
+    },
+    {
+      "frame": 327,
+      "shot_type": "切球",
+      "confidence": 0.13018837571144104
+    },
+    {
+      "frame": 328,
+      "shot_type": "切球",
+      "confidence": 0.13018837571144104
+    },
+    {
+      "frame": 329,
+      "shot_type": "切球",
+      "confidence": 0.13018839061260223
+    },
+    {
+      "frame": 330,
+      "shot_type": "切球",
+      "confidence": 0.13018856942653656
+    },
+    {
+      "frame": 331,
+      "shot_type": "切球",
+      "confidence": 0.1301887333393097
+    },
+    {
+      "frame": 332,
+      "shot_type": "切球",
+      "confidence": 0.1301887333393097
+    },
+    {
+      "frame": 333,
+      "shot_type": "切球",
+      "confidence": 0.1301887482404709
+    },
+    {
+      "frame": 334,
+      "shot_type": "切球",
+      "confidence": 0.13018876314163208
+    },
+    {
+      "frame": 335,
+      "shot_type": "切球",
+      "confidence": 0.13018876314163208
+    },
+    {
+      "frame": 336,
+      "shot_type": "切球",
+      "confidence": 0.1301887035369873
+    },
+    {
+      "frame": 337,
+      "shot_type": "切球",
+      "confidence": 0.1301886886358261
+    },
+    {
+      "frame": 338,
+      "shot_type": "切球",
+      "confidence": 0.13018864393234253
+    },
+    {
+      "frame": 339,
+      "shot_type": "切球",
+      "confidence": 0.13018861413002014
+    },
+    {
+      "frame": 340,
+      "shot_type": "切球",
+      "confidence": 0.13018859922885895
+    },
+    {
+      "frame": 341,
+      "shot_type": "切球",
+      "confidence": 0.1301884949207306
+    },
+    {
+      "frame": 342,
+      "shot_type": "切球",
+      "confidence": 0.13018837571144104
+    },
+    {
+      "frame": 343,
+      "shot_type": "切球",
+      "confidence": 0.13018837571144104
+    },
+    {
+      "frame": 344,
+      "shot_type": "切球",
+      "confidence": 0.13018840551376343
+    },
+    {
+      "frame": 345,
+      "shot_type": "切球",
+      "confidence": 0.13018837571144104
+    },
+    {
+      "frame": 346,
+      "shot_type": "切球",
+      "confidence": 0.13018839061260223
+    },
+    {
+      "frame": 347,
+      "shot_type": "切球",
+      "confidence": 0.1301882416009903
+    },
+    {
+      "frame": 348,
+      "shot_type": "切球",
+      "confidence": 0.1301882117986679
+    },
+    {
+      "frame": 349,
+      "shot_type": "切球",
+      "confidence": 0.1301881968975067
+    },
+    {
+      "frame": 350,
+      "shot_type": "切球",
+      "confidence": 0.13018807768821716
+    },
+    {
+      "frame": 351,
+      "shot_type": "切球",
+      "confidence": 0.13018806278705597
+    },
+    {
+      "frame": 352,
+      "shot_type": "切球",
+      "confidence": 0.1301879584789276
+    },
+    {
+      "frame": 353,
+      "shot_type": "切球",
+      "confidence": 0.13018806278705597
+    },
+    {
+      "frame": 354,
+      "shot_type": "切球",
+      "confidence": 0.13018813729286194
+    },
+    {
+      "frame": 355,
+      "shot_type": "切球",
+      "confidence": 0.1301882416009903
+    },
+    {
+      "frame": 356,
+      "shot_type": "切球",
+      "confidence": 0.1301881968975067
+    },
+    {
+      "frame": 357,
+      "shot_type": "切球",
+      "confidence": 0.1301881968975067
+    },
+    {
+      "frame": 358,
+      "shot_type": "切球",
+      "confidence": 0.1301882117986679
+    },
+    {
+      "frame": 359,
+      "shot_type": "切球",
+      "confidence": 0.1301881968975067
+    },
+    {
+      "frame": 360,
+      "shot_type": "切球",
+      "confidence": 0.1301881968975067
+    },
+    {
+      "frame": 361,
+      "shot_type": "切球",
+      "confidence": 0.13018818199634552
+    },
+    {
+      "frame": 362,
+      "shot_type": "切球",
+      "confidence": 0.1301881968975067
+    },
+    {
+      "frame": 363,
+      "shot_type": "切球",
+      "confidence": 0.13018818199634552
+    },
+    {
+      "frame": 364,
+      "shot_type": "切球",
+      "confidence": 0.13018809258937836
+    },
+    {
+      "frame": 365,
+      "shot_type": "切球",
+      "confidence": 0.13018798828125
+    },
+    {
+      "frame": 366,
+      "shot_type": "切球",
+      "confidence": 0.13018798828125
+    },
+    {
+      "frame": 367,
+      "shot_type": "切球",
+      "confidence": 0.1301879584789276
+    },
+    {
+      "frame": 368,
+      "shot_type": "切球",
+      "confidence": 0.13018788397312164
+    },
+    {
+      "frame": 369,
+      "shot_type": "切球",
+      "confidence": 0.13018789887428284
+    },
+    {
+      "frame": 370,
+      "shot_type": "切球",
+      "confidence": 0.13018789887428284
+    },
+    {
+      "frame": 371,
+      "shot_type": "切球",
+      "confidence": 0.13018792867660522
+    },
+    {
+      "frame": 372,
+      "shot_type": "切球",
+      "confidence": 0.13018798828125
+    },
+    {
+      "frame": 373,
+      "shot_type": "切球",
+      "confidence": 0.13018792867660522
+    },
+    {
+      "frame": 374,
+      "shot_type": "切球",
+      "confidence": 0.1301879584789276
+    },
+    {
+      "frame": 375,
+      "shot_type": "切球",
+      "confidence": 0.1301879733800888
+    },
+    {
+      "frame": 376,
+      "shot_type": "切球",
+      "confidence": 0.13018798828125
+    },
+    {
+      "frame": 377,
+      "shot_type": "切球",
+      "confidence": 0.1301880031824112
+    },
+    {
+      "frame": 378,
+      "shot_type": "切球",
+      "confidence": 0.1301880180835724
+    },
+    {
+      "frame": 379,
+      "shot_type": "切球",
+      "confidence": 0.13018804788589478
+    },
+    {
+      "frame": 380,
+      "shot_type": "切球",
+      "confidence": 0.13018810749053955
+    },
+    {
+      "frame": 381,
+      "shot_type": "切球",
+      "confidence": 0.13018810749053955
+    },
+    {
+      "frame": 382,
+      "shot_type": "切球",
+      "confidence": 0.13018810749053955
+    },
+    {
+      "frame": 383,
+      "shot_type": "切球",
+      "confidence": 0.13018807768821716
+    },
+    {
+      "frame": 384,
+      "shot_type": "切球",
+      "confidence": 0.1301880180835724
+    },
+    {
+      "frame": 385,
+      "shot_type": "切球",
+      "confidence": 0.13018794357776642
+    },
+    {
+      "frame": 386,
+      "shot_type": "切球",
+      "confidence": 0.13018786907196045
+    },
+    {
+      "frame": 387,
+      "shot_type": "切球",
+      "confidence": 0.13018783926963806
+    },
+    {
+      "frame": 388,
+      "shot_type": "切球",
+      "confidence": 0.13018782436847687
+    },
+    {
+      "frame": 389,
+      "shot_type": "切球",
+      "confidence": 0.13018779456615448
+    },
+    {
+      "frame": 390,
+      "shot_type": "切球",
+      "confidence": 0.1301877647638321
+    },
+    {
+      "frame": 391,
+      "shot_type": "切球",
+      "confidence": 0.1301877200603485
+    },
+    {
+      "frame": 392,
+      "shot_type": "切球",
+      "confidence": 0.13018766045570374
+    },
+    {
+      "frame": 393,
+      "shot_type": "切球",
+      "confidence": 0.13018766045570374
+    },
+    {
+      "frame": 394,
+      "shot_type": "切球",
+      "confidence": 0.13018758594989777
+    },
+    {
+      "frame": 395,
+      "shot_type": "切球",
+      "confidence": 0.1301875114440918
+    },
+    {
+      "frame": 396,
+      "shot_type": "切球",
+      "confidence": 0.1301875114440918
+    },
+    {
+      "frame": 397,
+      "shot_type": "切球",
+      "confidence": 0.13018745183944702
+    },
+    {
+      "frame": 398,
+      "shot_type": "切球",
+      "confidence": 0.13018745183944702
+    },
+    {
+      "frame": 399,
+      "shot_type": "切球",
+      "confidence": 0.13018742203712463
+    },
+    {
+      "frame": 400,
+      "shot_type": "切球",
+      "confidence": 0.13018733263015747
+    },
+    {
+      "frame": 401,
+      "shot_type": "切球",
+      "confidence": 0.1301872730255127
+    },
+    {
+      "frame": 402,
+      "shot_type": "切球",
+      "confidence": 0.1301872283220291
+    },
+    {
+      "frame": 403,
+      "shot_type": "切球",
+      "confidence": 0.13018721342086792
+    },
+    {
+      "frame": 404,
+      "shot_type": "切球",
+      "confidence": 0.13018716871738434
+    },
+    {
+      "frame": 405,
+      "shot_type": "切球",
+      "confidence": 0.13018715381622314
+    },
+    {
+      "frame": 406,
+      "shot_type": "切球",
+      "confidence": 0.13018721342086792
+    },
+    {
+      "frame": 407,
+      "shot_type": "切球",
+      "confidence": 0.1301872432231903
+    },
+    {
+      "frame": 408,
+      "shot_type": "切球",
+      "confidence": 0.13018730282783508
+    },
+    {
+      "frame": 409,
+      "shot_type": "切球",
+      "confidence": 0.13018730282783508
+    },
+    {
+      "frame": 410,
+      "shot_type": "切球",
+      "confidence": 0.1301872581243515
+    },
+    {
+      "frame": 411,
+      "shot_type": "切球",
+      "confidence": 0.13018719851970673
+    },
+    {
+      "frame": 412,
+      "shot_type": "切球",
+      "confidence": 0.13018716871738434
+    },
+    {
+      "frame": 413,
+      "shot_type": "切球",
+      "confidence": 0.13018715381622314
+    },
+    {
+      "frame": 414,
+      "shot_type": "切球",
+      "confidence": 0.13018710911273956
+    },
+    {
+      "frame": 415,
+      "shot_type": "切球",
+      "confidence": 0.13018710911273956
+    },
+    {
+      "frame": 416,
+      "shot_type": "切球",
+      "confidence": 0.13018713891506195
+    },
+    {
+      "frame": 417,
+      "shot_type": "切球",
+      "confidence": 0.13018713891506195
+    },
+    {
+      "frame": 418,
+      "shot_type": "切球",
+      "confidence": 0.13018716871738434
+    },
+    {
+      "frame": 419,
+      "shot_type": "切球",
+      "confidence": 0.13018718361854553
+    },
+    {
+      "frame": 420,
+      "shot_type": "切球",
+      "confidence": 0.13018718361854553
+    },
+    {
+      "frame": 421,
+      "shot_type": "切球",
+      "confidence": 0.13018715381622314
+    },
+    {
+      "frame": 422,
+      "shot_type": "切球",
+      "confidence": 0.13018716871738434
+    },
+    {
+      "frame": 423,
+      "shot_type": "切球",
+      "confidence": 0.13018716871738434
+    },
+    {
+      "frame": 424,
+      "shot_type": "切球",
+      "confidence": 0.1301872283220291
+    },
+    {
+      "frame": 425,
+      "shot_type": "切球",
+      "confidence": 0.1301872730255127
+    },
+    {
+      "frame": 426,
+      "shot_type": "切球",
+      "confidence": 0.13018733263015747
+    },
+    {
+      "frame": 427,
+      "shot_type": "切球",
+      "confidence": 0.13018740713596344
+    },
+    {
+      "frame": 428,
+      "shot_type": "切球",
+      "confidence": 0.13018737733364105
+    },
+    {
+      "frame": 429,
+      "shot_type": "切球",
+      "confidence": 0.13018730282783508
+    },
+    {
+      "frame": 430,
+      "shot_type": "切球",
+      "confidence": 0.1301872730255127
+    },
+    {
+      "frame": 431,
+      "shot_type": "切球",
+      "confidence": 0.1301872879266739
+    },
+    {
+      "frame": 432,
+      "shot_type": "切球",
+      "confidence": 0.1301872730255127
+    },
+    {
+      "frame": 433,
+      "shot_type": "切球",
+      "confidence": 0.13018733263015747
+    },
+    {
+      "frame": 434,
+      "shot_type": "切球",
+      "confidence": 0.13018731772899628
+    },
+    {
+      "frame": 435,
+      "shot_type": "切球",
+      "confidence": 0.13018733263015747
+    },
+    {
+      "frame": 436,
+      "shot_type": "切球",
+      "confidence": 0.13018730282783508
+    },
+    {
+      "frame": 437,
+      "shot_type": "切球",
+      "confidence": 0.13018731772899628
+    },
+    {
+      "frame": 438,
+      "shot_type": "切球",
+      "confidence": 0.13018737733364105
+    },
+    {
+      "frame": 439,
+      "shot_type": "切球",
+      "confidence": 0.1301874965429306
+    },
+    {
+      "frame": 440,
+      "shot_type": "切球",
+      "confidence": 0.13018760085105896
+    },
+    {
+      "frame": 441,
+      "shot_type": "切球",
+      "confidence": 0.13018770515918732
+    },
+    {
+      "frame": 442,
+      "shot_type": "切球",
+      "confidence": 0.1301877498626709
+    },
+    {
+      "frame": 443,
+      "shot_type": "切球",
+      "confidence": 0.13018780946731567
+    },
+    {
+      "frame": 444,
+      "shot_type": "切球",
+      "confidence": 0.13018780946731567
+    },
+    {
+      "frame": 445,
+      "shot_type": "切球",
+      "confidence": 0.13018785417079926
+    }
+  ]
+}

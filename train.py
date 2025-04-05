@@ -126,7 +126,7 @@ def main():
     optimizer = optim.Adam(model.parameters(), lr=0.001) # TODO 学习率
     
     # 训练模型
-    num_epochs = 2
+    num_epochs = 1
     train_model(model, train_loader, val_loader, criterion, optimizer, num_epochs, device)
 
 if __name__ == '__main__':

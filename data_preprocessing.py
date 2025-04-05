@@ -9,7 +9,6 @@ from typing import List, Tuple, Dict
 import json
 
 class BadmintonDataset(Dataset):
-    # TODO sequence_length
     def __init__(self, root_dir: str, video_dir: str, transform=None, sequence_length: int = 16):
         """
         初始化数据集
@@ -108,6 +107,11 @@ class BadmintonDataset(Dataset):
             ret, frame = cap.read()
             if not ret:
                 return None
+            # 调整大小
+            frame = cv2.resize(frame, (224, 224))
+            # 转换为 (C, H, W) 格式
+            frame = np.transpose(frame, (2, 0, 1))
+            # 添加到帧列表
             frames.append(frame)
             
         cap.release()
@@ -126,8 +130,8 @@ class BadmintonDataset(Dataset):
             return torch.zeros((3, self.sequence_length, 224, 224)), torch.tensor(0)
             
         # 转换为tensor
-        frames = torch.from_numpy(frames).float()
-        frames = frames.permute(3, 0, 1, 2)  # (C, T, H, W) -> (channels, time, height, width)
+        frames = torch.from_numpy(frames).float()  # (T, C, H, W)
+        frames = frames.permute(1, 0, 2, 3)  # (C, T, H, W)
         
         # 应用数据增强
         if self.transform:
@@ -135,12 +139,12 @@ class BadmintonDataset(Dataset):
             
         return frames, torch.tensor(sample['shot_type'])
 
-def create_data_loaders(root_dir: str, video_dir: str, batch_size: int = 32, num_workers: int = 4):
+def create_data_loaders(root_dir: str, video_dir: str, batch_size: int = 32, num_workers: int = 4,transform=None):
     """
     创建训练和验证数据加载器
     """
     # 创建数据集
-    dataset = BadmintonDataset(root_dir, video_dir)
+    dataset = BadmintonDataset(root_dir, video_dir,transform=transform)
     
     # 划分训练集和验证集
     train_size = int(0.8 * len(dataset)) # 80%训练集，20%验证集
@@ -179,4 +183,4 @@ if __name__ == '__main__':
     for frames, labels in train_loader:
         print(f"批次形状: {frames.shape}")
         print(f"标签形状: {labels.shape}")
-        break 
+        break

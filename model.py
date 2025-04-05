@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from typing import Tuple
+import math
 
 class PositionalEncoding(nn.Module):
     def __init__(self, d_model: int, max_len: int = 5000):
@@ -18,12 +19,12 @@ class PositionalEncoding(nn.Module):
 
 class BadmintonShotNet(nn.Module):
     def __init__(self, num_classes=18, sequence_length=16):
-        super(BadmintonShotNet, self).__init__()
+        super(BadmintonShotNet, self).__init__() # 初始化父类
         
         # 3D卷积层 - 使用步长卷积替代池化
         # 输入: (batch_size, 3, sequence_length, 224, 224)
         # 3D卷积块1
-        self.conv3d_1 = nn.Conv3d(3, 8, kernel_size=(3, 3, 3), padding=(1, 1, 1))
+        self.conv3d_1 = nn.Conv3d(3, 8, kernel_size=(3, 3, 3), padding=(1, 1, 1)) #参数：输入通道数，输出通道数，卷积核大小，填充大小
         self.bn3d_1 = nn.BatchNorm3d(8)
         self.conv3d_1_stride = nn.Conv3d(8, 8, kernel_size=(2, 2, 2), stride=(2, 2, 2))
         # 3D卷积块2
@@ -40,7 +41,8 @@ class BadmintonShotNet(nn.Module):
         # 输入: (batch_size, 3, sequence_length, 224, 224)
         # 经过3次下采样后: (batch_size, 32, sequence_length/8, 224/8, 224/8)
         # 230400 = 32 * (16/8) * (224/8) * (224/8)
-        self.flat_features = 230400
+        self.flat_features = 32 * (sequence_length // 8) * (224 // 8) * (224 // 8)
+        print(f"展平后的特征维度: {self.flat_features}")
         
         # 全连接层 - 使用更小的隐藏层
         self.fc1 = nn.Linear(self.flat_features, 512)  # 输入特征维度为展平后的特征维度

@@ -37,7 +37,7 @@ from ultralytics import YOLO
 model = YOLO("yolov8n-pose.pt")
 
 # 设置视频文件路径
-video_path = "282_1743336205.mp4"
+video_path = "466_1743438943_black.mp4"
 
 # 初始化视频捕获对象
 cap = cv2.VideoCapture(video_path)

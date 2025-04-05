@@ -14,6 +14,7 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
+
 class BadmintonShotPredictor:
     def __init__(
         self,
@@ -39,28 +40,30 @@ class BadmintonShotPredictor:
         self.frame_size = frame_size
         
         # 加载模型
-        self.model = create_model(num_classes=18, sequence_length=sequence_length, input_channels=3)
+        self.model = create_model(num_classes=10, sequence_length=sequence_length)#, input_channels=3
         self.model.load_state_dict(torch.load(model_path))  # ['model_state_dict']
         self.model.to(self.device)
-        self.model.eval()
+        self.model.eval() # 设置为评估模式
+        logging.info(f"模型加载成功: {model_path}")
         
         # 击球类型映射
-        self.shot_type_map = {
-            0: '放小球', 1: '擋小球', 2: '殺球', 3: '点扣',
-            4: '挑球', 5: '防守回挑', 6: '长球', 7: '平球',
-            8: '小平球', 9: '后场抽平球', 10: '切球',
-            11: '过渡切球', 12: '推球', 13: '扑球',
-            14: '防守回抽', 15: '勾球', 16: '发短球', 17: '发长球'
-        }
-        
+        # self.shot_type_map = {
+        #     0: '放小球', 1: '擋小球', 2: '殺球', 3: '点扣',
+        #     4: '挑球', 5: '防守回挑', 6: '长球', 7: '平球',
+        #     8: '小平球', 9: '后场抽平球', 10: '切球',
+        #     11: '过渡切球', 12: '推球', 13: '扑球',
+        #     14: '防守回抽', 15: '勾球', 16: '发短球', 17: '发长球'
+        # }
+        self.shot_type_map = {1: '發短球', 2: '長球', 3: '推球', 4: '殺球', 5: '擋小球', 6: '平球', 7: '放小球', 8: '挑球', 9: '切球', 10: '發長球', 11: '接不到'}
+
         # 视频文件映射
         self.video_mapping = {
-            'Pusarla_V._Sindhu_Pornpawee_Chochuwong_HSBC_BWF_WORLD_TOUR_FINALS_2020_QuarterFinals': 
-                'HSBC BWF World Tour Finals ｜ Day 3： Pornpawee Chochuwong (THA) vs. Pusarla V. Sindhu (IND) [Mawo3l3Hb9E].mp4',
-            'Carolina_Marin_Pornpawee_Chochuwong_HSBC_BWF_WORLD_TOUR_FINALS_2020_SemiFinals':
-                'HSBC BWF World Tour Finals ｜ Day 4： Carolina Marin (ESP) [1] vs. Pornpawee Chochuwong (THA) [vfzkc3lFTdM].mp4',
-            'Anders_Antonsen_Viktor_Axelsen_HSBC_BWF_WORLD_TOUR_FINALS_2020_Finals':
-                'HSBC BWF World Tour Finals ｜ Day 5： Viktor Axelsen (DEN) vs. Anders Antonsen (DEN) [j7_cjmJDYNU].mp4',
+            # 'Pusarla_V._Sindhu_Pornpawee_Chochuwong_HSBC_BWF_WORLD_TOUR_FINALS_2020_QuarterFinals': 
+            #     'HSBC BWF World Tour Finals ｜ Day 3： Pornpawee Chochuwong (THA) vs. Pusarla V. Sindhu (IND) [Mawo3l3Hb9E].mp4',
+            # 'Carolina_Marin_Pornpawee_Chochuwong_HSBC_BWF_WORLD_TOUR_FINALS_2020_SemiFinals':
+            #     'HSBC BWF World Tour Finals ｜ Day 4： Carolina Marin (ESP) [1] vs. Pornpawee Chochuwong (THA) [vfzkc3lFTdM].mp4',
+            # 'Anders_Antonsen_Viktor_Axelsen_HSBC_BWF_WORLD_TOUR_FINALS_2020_Finals':
+            #     'HSBC BWF World Tour Finals ｜ Day 5： Viktor Axelsen (DEN) vs. Anders Antonsen (DEN) [j7_cjmJDYNU].mp4',
             '282_1743336205.mp4':'282_1743336205.mp4'
         }
         
@@ -72,8 +75,10 @@ class BadmintonShotPredictor:
         frame = frame.astype(np.float32) / 255.0
         # 转换为 (C, H, W) 格式
         frame = np.transpose(frame, (2, 0, 1))
-        # 添加时间维度 (T, C, H, W)
-        frame = np.expand_dims(frame, axis=0)
+        # 添加时间维度并调整为 (C, T, H, W)
+        frame = np.expand_dims(frame, axis=0)  # (1, C, H, W)
+        frame = np.transpose(frame, (1, 0, 2, 3))  # (C, T, H, W)
+
         return frame
     
     def process_video(self, video_path: str) -> List[Tuple[int, str, float]]:
@@ -88,43 +93,43 @@ class BadmintonShotPredictor:
         if not cap.isOpened():
             raise ValueError(f"无法打开视频文件: {video_path}")
             
-        fps = cap.get(cv2.CAP_PROP_FPS)
         total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-        
         results = []
-        frame_buffer = []
         
-        with torch.no_grad():
-            for frame_idx in tqdm(range(total_frames), desc="处理视频"):
-                ret, frame = cap.read()
-                if not ret:
-                    break
-                    
-                # 预处理帧
-                processed_frame = self.preprocess_frame(frame)
-                frame_buffer.append(processed_frame)
+        with torch.no_grad():  # 禁用梯度计算
+
+            for frame_idx in tqdm(range(self.sequence_length, total_frames), desc="处理视频"):
+                # 设置起始帧
+                cap.set(cv2.CAP_PROP_POS_FRAMES, frame_idx - self.sequence_length)
                 
-                # 当缓冲区达到指定长度时进行预测
-                if len(frame_buffer) == self.sequence_length:
-                    # 转换为tensor
-                    input_tensor = torch.from_numpy(np.concatenate(frame_buffer, axis=0))  # (T, C, H, W)
-                    input_tensor = input_tensor.to(self.device)
-                    input_tensor = input_tensor.unsqueeze(0)  # Add batch dimension (B, T, C, H, W)
-                    
-                    # 预测
-                    outputs = self.model(input_tensor)
-                    probabilities = torch.softmax(outputs, dim=1)
-                    confidence, predicted = torch.max(probabilities, 1)
-                    
-                    # 记录结果
-                    results.append((
-                        frame_idx,
-                        self.shot_type_map[predicted.item()],
-                        confidence.item()
-                    ))
-                    
-                    # 移除最旧的帧
-                    frame_buffer.pop(0)
+                # 加载帧序列
+                frame_buffer = []
+                for _ in range(self.sequence_length):
+                    ret, frame = cap.read() 
+                    if not ret:
+                        break
+                    processed_frame = self.preprocess_frame(frame)
+                    frame_buffer.append(processed_frame)
+                
+                # if len(frame_buffer) == self.sequence_length:
+                #     continue
+                # 转换为tensor
+                input_tensor = torch.from_numpy(np.stack(frame_buffer, axis=0))  # (T, C, H, W)
+                input_tensor = input_tensor.permute(2,1,0, 3, 4)  # Rearrange to (B, C, T, H, W)
+                input_tensor = input_tensor.to(self.device)
+                
+                # 预测
+                print(input_tensor.sum())
+                outputs = self.model(input_tensor)
+                probabilities = torch.softmax(outputs, dim=1)
+                confidence, predicted = torch.max(probabilities, 1)
+            
+                # 记录结果
+                results.append((
+                    frame_idx,
+                    self.shot_type_map[predicted.item()+1],
+                    confidence.item()
+                ))
         
         cap.release()
         return results
@@ -173,9 +178,17 @@ class BadmintonShotPredictor:
             logging.info(f"检测到的击球类型: {', '.join(unique_shots)}")
             logging.info(f"总预测帧数: {len(results)}")
 
+
 def main():
     # 设置设备
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    if torch.backends.mps.is_available():
+        device = torch.device("mps")
+        # 设置MPS内存管理
+        # os.environ['PYTORCH_MPS_HIGH_WATERMARK_RATIO'] = '0.8'  # 设置内存使用上限为80%
+    elif torch.cuda.is_available():
+        device = torch.device("cuda")
+    else:
+        device = torch.device("cpu")
     logging.info(f'使用设备: {device}')
     
     # 创建预测器
