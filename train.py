@@ -10,13 +10,15 @@ import logging
 from datetime import datetime
 from torch.utils.data import DataLoader
 from torchvision import transforms
+from colorama import Fore, Style  # Import colorama for colored output
+import multiprocessing
+multiprocessing.set_start_method('fork', force=True)  # Use 'fork' start method
 
 from data_preprocessing import create_data_loaders
 from model import BadmintonShotNet
 
 # 设置日志
 logging.basicConfig(
-    level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
         logging.FileHandler(f'training_{datetime.now().strftime("%Y%m%d_%H%M%S")}.log'),
@@ -34,24 +36,28 @@ def train_model(model, train_loader, val_loader, criterion, optimizer, num_epoch
         train_correct = 0
         train_total = 0
         
-        for frames, labels in tqdm(train_loader, desc=f'Epoch {epoch+1}/{num_epochs} - Training'):
-            # 这里的frames是一个batch_size * 3 * 16 * 224 * 224的tensor
-            frames = frames.to(device)
-            # labels是一个batch_size * 1的tensor
-            labels = labels.to(device)
-            
-            optimizer.zero_grad() # 清空梯度
-            # 前向传播
-            outputs = model(frames)
-            loss = criterion(outputs, labels)
-            loss.backward()
-            optimizer.step()
-            
-            train_loss += loss.item()
-            _, predicted = outputs.max(1)
-            train_total += labels.size(0)
-            train_correct += predicted.eq(labels).sum().item() # 计算正确预测的数量
-        
+        for batch_idx, (frames, labels) in enumerate(tqdm(train_loader, desc=f'Epoch {epoch+1}/{num_epochs} - Training')):
+            try:
+                # 这里的frames是一个batch_size * 3 * 16 * 224 * 224的tensor
+                frames = frames.to(device)
+                # labels是一个batch_size * 1的tensor
+                labels = labels.to(device)
+                
+                optimizer.zero_grad()  # 清空梯度
+                # 前向传播
+                outputs = model(frames)
+                loss = criterion(outputs, labels)
+                loss.backward()
+                optimizer.step()
+                
+                train_loss += loss.item()
+                _, predicted = outputs.max(1)
+                train_total += labels.size(0)
+                train_correct += predicted.eq(labels).sum().item()  # 计算正确预测的数量
+            except Exception as e:
+                logging.error(f"{Fore.WHITE}Error in training loop at batch {batch_idx}: {e}{Style.RESET_ALL}")
+                continue  # 跳过当前batch
+
         train_acc = 100. * train_correct / train_total
         
         # 验证阶段
@@ -61,32 +67,39 @@ def train_model(model, train_loader, val_loader, criterion, optimizer, num_epoch
         val_total = 0
         
         with torch.no_grad():
-            # for frames, labels in tqdm(val_loader, desc=f'Epoch {epoch+1}/{num_epochs} - Validation'):
             for i, (frames, labels) in enumerate(val_loader):
-                print(f'\rEpoch {epoch+1}/{num_epochs} - Validation: {i+1}/{len(val_loader)} batches', end='')
-                frames = frames.to(device)
-                labels = labels.to(device)
-                
-                outputs = model(frames)
-                loss = criterion(outputs, labels)
-                
-                val_loss += loss.item()
-                _, predicted = outputs.max(1)
-                val_total += labels.size(0)
-                val_correct += predicted.eq(labels).sum().item()
+                try:
+                    print(f'\r{Fore.WHITE}Epoch {epoch+1}/{num_epochs} - Validation: {i+1}/{len(val_loader)} batches{Style.RESET_ALL}', end='')
+                    frames = frames.to(device)
+                    labels = labels.to(device)
+                    
+                    outputs = model(frames)
+                    loss = criterion(outputs, labels)
+                    
+                    val_loss += loss.item()
+                    _, predicted = outputs.max(1)
+                    val_total += labels.size(0)
+                    val_correct += predicted.eq(labels).sum().item()
+                except Exception as e:
+                    logging.error(f"{Fore.WHITE}Error in validation loop at batch {i}: {e}{Style.RESET_ALL}")
+                    continue  # 跳过当前batch
         
         val_acc = 100. * val_correct / val_total
         
         # 打印训练信息
-        logging.info(f'Epoch {epoch+1}/{num_epochs}:')
-        logging.info(f'Train Loss: {train_loss/len(train_loader):.4f}, Train Acc: {train_acc:.2f}%')
-        logging.info(f'Val Loss: {val_loss/len(val_loader):.4f}, Val Acc: {val_acc:.2f}%')
+        logging.info(f"{Fore.WHITE}Epoch {epoch+1}/{num_epochs}:{Style.RESET_ALL}")
+        logging.info(f"{Fore.YELLOW}Train Loss: {train_loss/len(train_loader):.4f}, Train Acc: {train_acc:.2f}%{Style.RESET_ALL}")
+        logging.info(f"{Fore.YELLOW}Val Loss: {val_loss/len(val_loader):.4f}, Val Acc: {val_acc:.2f}%{Style.RESET_ALL}")
+        
+        print(f"{Fore.WHITE}Epoch {epoch+1}/{num_epochs}:{Style.RESET_ALL}")
+        print(f"{Fore.YELLOW}Train Loss: {train_loss/len(train_loader):.4f}, Train Acc: {train_acc:.2f}%{Style.RESET_ALL}")
+        print(f"{Fore.YELLOW}Val Loss: {val_loss/len(val_loader):.4f}, Val Acc: {val_acc:.2f}%{Style.RESET_ALL}")
         
         # 保存最佳模型
         if val_acc > best_val_acc:
             best_val_acc = val_acc
             torch.save(model.state_dict(), 'best_model.pth')
-            logging.info(f'保存最佳模型，验证准确率: {best_val_acc:.2f}%')
+            logging.info(f"{Fore.YELLOW}保存最佳模型，验证准确率: {best_val_acc:.2f}%{Style.RESET_ALL}")
 
 def main():
     # 设置随机种子
@@ -119,7 +132,7 @@ def main():
     
     # 创建模型
     # TODO 是一共10类吧
-    model = BadmintonShotNet(num_classes=10).to(device) #num_classes表示分类的类别数，这里假设有10个类别
+    model = BadmintonShotNet(num_classes=18).to(device) #num_classes表示分类的类别数，这里假设有10个类别
     
     # 定义损失函数和优化器
     criterion = nn.CrossEntropyLoss()
@@ -130,4 +143,4 @@ def main():
     train_model(model, train_loader, val_loader, criterion, optimizer, num_epochs, device)
 
 if __name__ == '__main__':
-    main() 
+    main()

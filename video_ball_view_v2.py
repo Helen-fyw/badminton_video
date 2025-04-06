@@ -44,8 +44,8 @@ from ultralytics import YOLO
 model = YOLO("yolov8n-pose.pt")
 
 # 设置视频和标签文件路径
-video_path = "youtube_video/HSBC BWF World Tour Finals ｜ Day 3： Pornpawee Chochuwong (THA) vs. Pusarla V. Sindhu (IND) [Mawo3l3Hb9E].mp4"
-label_path = "ShuttleSet/set/Pusarla_V._Sindhu_Pornpawee_Chochuwong_HSBC_BWF_WORLD_TOUR_FINALS_2020_QuarterFinals/set1.csv"
+video_path = "youtube_video/Anders_Antonsen_Viktor_Axelsen_HSBC_BWF_WORLD_TOUR_FINALS_2020_Finals/Anders_Antonsen_Viktor_Axelsen_HSBC_BWF_WORLD_TOUR_FINALS_2020_Finals.mp4"
+label_path = "ShuttleSet/set/Anders_Antonsen_Viktor_Axelsen_HSBC_BWF_WORLD_TOUR_FINALS_2020_Finals/set3.csv"
 
 # 读取CSV标签文件
 labels = pd.read_csv(label_path)

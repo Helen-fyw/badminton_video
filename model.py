@@ -3,6 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from typing import Tuple
 import math
+from colorama import Fore, Style  # Import colorama for colored output
 
 class PositionalEncoding(nn.Module):
     def __init__(self, d_model: int, max_len: int = 5000):
@@ -42,7 +43,7 @@ class BadmintonShotNet(nn.Module):
         # 经过3次下采样后: (batch_size, 32, sequence_length/8, 224/8, 224/8)
         # 230400 = 32 * (16/8) * (224/8) * (224/8)
         self.flat_features = 32 * (sequence_length // 8) * (224 // 8) * (224 // 8)
-        print(f"展平后的特征维度: {self.flat_features}")
+        print(f"{Fore.YELLOW}展平后的特征维度: {self.flat_features}{Style.RESET_ALL}")
         
         # 全连接层 - 使用更小的隐藏层
         self.fc1 = nn.Linear(self.flat_features, 512)  # 输入特征维度为展平后的特征维度
@@ -53,33 +54,33 @@ class BadmintonShotNet(nn.Module):
         
     def forward(self, x):
         # 打印输入形状
-        print(f"输入形状: {x.shape}")
+        print(f"{Fore.WHITE}输入形状: {x.shape}{Style.RESET_ALL}")
         
         # 3D卷积块1
         x = self.conv3d_1(x)
         x = self.bn3d_1(x)
         x = F.relu(x)
         x = self.conv3d_1_stride(x)
-        print(f"卷积块1后形状: {x.shape}")
+        print(f"{Fore.YELLOW}卷积块1后形状: {x.shape}{Style.RESET_ALL}")
         
         # 3D卷积块2
         x = self.conv3d_2(x)
         x = self.bn3d_2(x)
         x = F.relu(x)
         x = self.conv3d_2_stride(x)
-        print(f"卷积块2后形状: {x.shape}")
+        print(f"{Fore.YELLOW}卷积块2后形状: {x.shape}{Style.RESET_ALL}")
         
         # 3D卷积块3
         x = self.conv3d_3(x)
         x = self.bn3d_3(x)
         x = F.relu(x)
         x = self.conv3d_3_stride(x)
-        print(f"卷积块3后形状: {x.shape}")
+        print(f"{Fore.YELLOW}卷积块3后形状: {x.shape}{Style.RESET_ALL}")
         
         # 展平
         x = x.view(x.size(0), -1)  # 保持批次维度，展平其他维度
-        print(f"展平后形状: {x.shape}")
-        print(f"预期展平特征维度: {self.flat_features}")
+        print(f"{Fore.YELLOW}展平后形状: {x.shape}{Style.RESET_ALL}")
+        print(f"{Fore.YELLOW}预期展平特征维度: {self.flat_features}{Style.RESET_ALL}")
         
         # 全连接层
         x = F.relu(self.fc1(x))
@@ -108,4 +109,4 @@ if __name__ == '__main__':
     x = torch.randn(32, 3, 16, 224, 224)  # 批次大小为32，3个通道，16帧，224x224分辨率
     output = model(x)
     print(f"输入形状: {x.shape}")
-    print(f"输出形状: {output.shape}") 
+    print(f"输出形状: {output.shape}")
