@@ -40,7 +40,7 @@ class BadmintonShotPredictor:
         self.frame_size = frame_size
         
         # 加载模型
-        self.model = create_model(num_classes=10, sequence_length=sequence_length)#, input_channels=3
+        self.model = create_model(num_classes=18, sequence_length=sequence_length)#, input_channels=3
         self.model.load_state_dict(torch.load(model_path))  # ['model_state_dict']
         self.model.to(self.device)
         self.model.eval() # 设置为评估模式
@@ -54,7 +54,26 @@ class BadmintonShotPredictor:
         #     11: '过渡切球', 12: '推球', 13: '扑球',
         #     14: '防守回抽', 15: '勾球', 16: '发短球', 17: '发长球'
         # }
-        self.shot_type_map = {1: '發短球', 2: '長球', 3: '推球', 4: '殺球', 5: '擋小球', 6: '平球', 7: '放小球', 8: '挑球', 9: '切球', 10: '發長球', 11: '接不到'}
+        self.shot_type_map = {
+            1: '發短球',
+            2: '長球',
+            3: '推球',
+            4: '殺球',
+            5: '擋小球',
+            6: '平球',
+            7: '放小球',
+            8: '挑球',
+            9: '切球',
+            10: '發長球',
+            11: '接不到',
+            12: '勾球',  # 新增类型
+            13: '點扣',  # 新增类型
+            14: '防守回抽',  # 新增类型
+            15: '過度切球',  # 新增类型
+            16: '撲球',  # 新增类型
+            17: '後場抽平球',  # 新增类型
+            18: '未知球種'  # 新增类型
+        }
 
         # 视频文件映射
         self.video_mapping = {

@@ -19,13 +19,16 @@ class PositionalEncoding(nn.Module):
         return x + self.pe[:x.size(0)]
 
 class BadmintonShotNet(nn.Module):
-    def __init__(self, num_classes=18, sequence_length=16):
-        super(BadmintonShotNet, self).__init__() # 初始化父类
+    def __init__(self, num_classes=18, sequence_length=16, input_size=(224, 224)):
+        super(BadmintonShotNet, self).__init__()
+        
+        # 输入尺寸
+        self.input_size = input_size  # (height, width)
         
         # 3D卷积层 - 使用步长卷积替代池化
-        # 输入: (batch_size, 3, sequence_length, 224, 224)
+        # 输入: (batch_size, 3, sequence_length, height, width)
         # 3D卷积块1
-        self.conv3d_1 = nn.Conv3d(3, 8, kernel_size=(3, 3, 3), padding=(1, 1, 1)) #参数：输入通道数，输出通道数，卷积核大小，填充大小
+        self.conv3d_1 = nn.Conv3d(3, 8, kernel_size=(3, 3, 3), padding=(1, 1, 1))
         self.bn3d_1 = nn.BatchNorm3d(8)
         self.conv3d_1_stride = nn.Conv3d(8, 8, kernel_size=(2, 2, 2), stride=(2, 2, 2))
         # 3D卷积块2
@@ -36,77 +39,81 @@ class BadmintonShotNet(nn.Module):
         self.conv3d_3 = nn.Conv3d(16, 32, kernel_size=(3, 3, 3), padding=(1, 1, 1))
         self.bn3d_3 = nn.BatchNorm3d(32)
         self.conv3d_3_stride = nn.Conv3d(32, 32, kernel_size=(2, 2, 2), stride=(2, 2, 2))
-        # 输出: (batch_size, 32, sequence_length/8, 224/8, 224/8)
-
-        # 计算展平后的特征维度
-        # 输入: (batch_size, 3, sequence_length, 224, 224)
-        # 经过3次下采样后: (batch_size, 32, sequence_length/8, 224/8, 224/8)
-        # 230400 = 32 * (16/8) * (224/8) * (224/8)
-        self.flat_features = 32 * (sequence_length // 8) * (224 // 8) * (224 // 8)
+        
+        # 动态计算展平后的特征维度
+        self.flat_features = self._calculate_flat_features(sequence_length)
         print(f"{Fore.YELLOW}展平后的特征维度: {self.flat_features}{Style.RESET_ALL}")
         
-        # 全连接层 - 使用更小的隐藏层
-        self.fc1 = nn.Linear(self.flat_features, 512)  # 输入特征维度为展平后的特征维度
-        self.dropout1 = nn.Dropout(0.5)  # 防止过拟合
-        self.fc2 = nn.Linear(512, 256) # 隐藏层
-        self.dropout2 = nn.Dropout(0.5) # 防止过拟合
-        self.fc3 = nn.Linear(256, num_classes) # 输出层，num_classes为击球类型数量
-        
+        # 全连接层
+        self.fc1 = nn.Linear(self.flat_features, 512)
+        self.dropout1 = nn.Dropout(0.5)
+        self.fc2 = nn.Linear(512, 256)
+        self.dropout2 = nn.Dropout(0.5)
+        self.fc3 = nn.Linear(256, num_classes)
+    
+    def _calculate_flat_features(self, sequence_length):
+        """动态计算展平后的特征维度"""
+        with torch.no_grad():
+            dummy_input = torch.zeros(1, 3, sequence_length, *self.input_size)
+            x = self.conv3d_1(dummy_input)
+            x = self.bn3d_1(x)
+            x = F.relu(x)
+            x = self.conv3d_1_stride(x)
+            x = self.conv3d_2(x)
+            x = self.bn3d_2(x)
+            x = F.relu(x)
+            x = self.conv3d_2_stride(x)
+            x = self.conv3d_3(x)
+            x = self.bn3d_3(x)
+            x = F.relu(x)
+            x = self.conv3d_3_stride(x)
+            return x.numel()
+
     def forward(self, x):
-        # 打印输入形状
-        print(f"{Fore.WHITE}输入形状: {x.shape}{Style.RESET_ALL}")
-        
-        # 3D卷积块1
+        # Remove or comment out print statements for better performance
+        print(f"输入形状: {x.shape}")
         x = self.conv3d_1(x)
         x = self.bn3d_1(x)
         x = F.relu(x)
         x = self.conv3d_1_stride(x)
-        print(f"{Fore.YELLOW}卷积块1后形状: {x.shape}{Style.RESET_ALL}")
-        
-        # 3D卷积块2
+        print(f"卷积块1后形状: {x.shape}")
         x = self.conv3d_2(x)
         x = self.bn3d_2(x)
         x = F.relu(x)
         x = self.conv3d_2_stride(x)
-        print(f"{Fore.YELLOW}卷积块2后形状: {x.shape}{Style.RESET_ALL}")
-        
-        # 3D卷积块3
+        print(f"卷积块2后形状: {x.shape}")
         x = self.conv3d_3(x)
         x = self.bn3d_3(x)
         x = F.relu(x)
         x = self.conv3d_3_stride(x)
-        print(f"{Fore.YELLOW}卷积块3后形状: {x.shape}{Style.RESET_ALL}")
-        
-        # 展平
-        x = x.view(x.size(0), -1)  # 保持批次维度，展平其他维度
-        print(f"{Fore.YELLOW}展平后形状: {x.shape}{Style.RESET_ALL}")
-        print(f"{Fore.YELLOW}预期展平特征维度: {self.flat_features}{Style.RESET_ALL}")
-        
-        # 全连接层
+        print(f"卷积块3后形状: {x.shape}")
+        x = x.view(x.size(0), -1)
+        print(f"展平后形状: {x.shape}")
         x = F.relu(self.fc1(x))
         x = self.dropout1(x)
         x = F.relu(self.fc2(x))
         x = self.dropout2(x)
         x = self.fc3(x)
-        
         return x
 
-def create_model(num_classes: int = 18, sequence_length: int = 16) -> BadmintonShotNet:
+# Convert model to TorchScript for runtime optimization
+def create_model(num_classes: int = 18, sequence_length: int = 16, input_size=(224, 224)) -> BadmintonShotNet:
     """
     创建模型实例
     Args:
         num_classes: 击球类型数量
         sequence_length: 输入视频帧数
+        input_size: 输入图像的尺寸 (height, width)
     Returns:
         模型实例
     """
-    model = BadmintonShotNet(num_classes=num_classes, sequence_length=sequence_length)
-    return model
+    model = BadmintonShotNet(num_classes=num_classes, sequence_length=sequence_length, input_size=input_size)
+    return torch.jit.script(model)  # Convert to TorchScript
 
 if __name__ == '__main__':
     # 测试模型
-    model = create_model()
-    x = torch.randn(32, 3, 16, 224, 224)  # 批次大小为32，3个通道，16帧，224x224分辨率
+    model = create_model(input_size=(100, 50))  # 测试动态输入尺寸
+    x = torch.randn(32, 3, 16, 100, 50)  # 批次大小为32，3个通道，16帧，100x50分辨率
     output = model(x)
     print(f"输入形状: {x.shape}")
     print(f"输出形状: {output.shape}")
